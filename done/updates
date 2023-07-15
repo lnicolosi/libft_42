@@ -1,0 +1,18 @@
+DATE
+FONCTION		STATUS (ok, done, in progress)	//REMARQUES
+
+ok = aucune erreur
+done = fonctionne a priori
+in progress = en cours
+-----------------------------------------------------
+
+
+12.07.23 : 
+ft_strlen		done			//int | unsigned int / size_t | int
+ft_strcpy		done			//int | unsigned int
+ft_strncpy		in progress		//int | unsigned int / size_t | int
+
+13.07.23 :
+ft_strncpy		done			//peut pas utiliser size_t
+								//peut etre initialiser size_t ?
+

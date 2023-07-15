@@ -16,3 +16,7 @@ ft_strncpy		in progress		//int | unsigned int / size_t | int
 ft_strncpy		done			//peut pas utiliser size_t
 								//peut etre initialiser size_t ?
 
+15.07.23 :
+ft_strlen		done			//compris le size_t
+ft_bzero		in progress		//compris mais je commence ft_memset
+ft_memset		in progress

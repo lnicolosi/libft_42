@@ -31,8 +31,14 @@ int	main(void)
 	strncpy(dest, src, 6);
 	printf("copie de src dans dest : %s\n", dest);*/
 
-	/* ??? */
-	
+	/* TEST FT_MEMSET */
+
+	char	s[] = "Nicolosi";
+	bzero(s, 2);
+	printf("test : -%s-\n", s);
+	for (size_t i = 0; i < 8; i++) {
+        printf("buffer[%zu] = %d\n", i, s[i]);
+	}
 	
 	return(0);
 }

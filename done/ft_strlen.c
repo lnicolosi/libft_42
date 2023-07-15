@@ -1,6 +1,8 @@
-int	ft_strlen(char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	unsigned int	i; // pourquoi un u-int et pas size_t ?
+	int	i; // pourquoi un u-int et pas size_t ?
 
 	i = 0;
 	while (s[i])

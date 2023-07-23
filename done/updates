@@ -20,3 +20,6 @@ ft_strncpy		done			//peut pas utiliser size_t
 ft_strlen		done			//compris le size_t
 ft_bzero		in progress		//compris mais je commence ft_memset
 ft_memset		in progress
+
+16.07.23 :
+

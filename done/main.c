@@ -263,7 +263,17 @@ int	main(void)
     printf("memcmp string : return value : %d\n", comparaisonword);
     printf("ft_memcmp string : return value : %d\n\n", comparaisonword1);
 
+    /* TEST FT_ATOI */
 
+    char *num1 = "salut";
+    char *num2 = " salut";
+
+    int somme = atoi(num1) - atoi(num2);
+
+    printf("atoi : %s - %s = %d\n",num1, num2, somme);
+
+    somme = ft_atoi(num1) - ft_atoi(num2);
+    printf("ft_atoi : %s - %s = %d\n", num1, num2, somme);
 
 
 

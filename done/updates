@@ -51,6 +51,8 @@ ft_strlcat      in progress     //pas de man sur linux ? que unix ?
 ft_calloc       done            //controller les exception, double check
 ft_memcmp       done            //controller les exception, double check
 
+01.10.23 :
+ft_atoi         done            //controller les exception, double check
 
 
 

@@ -24,5 +24,8 @@ int     ft_toupper(int c);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *s);
 void    *ft_calloc(size_t nmemb, size_t size);
+int     ft_atoi(const char *nptr);
+
+
 
 #endif

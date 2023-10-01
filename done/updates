@@ -21,5 +21,38 @@ ft_strlen		done			//compris le size_t
 ft_bzero		in progress		//compris mais je commence ft_memset
 ft_memset		in progress
 
-16.07.23 :
+30.07.23 :
+ft_memset		done			//compris le cast en unsigned char
+ft_bzero		done			//comme memset mais tjr '0'
+ft_memcpy		done			//attention au cast explicite !
+
+06.08.23 :
+ft_isalpha      done            //the base function return 1024?
+ft_isdigit      done            //the base function return 2048?
+ft_isprint      done            //the base function return 16384?
+
+18.08.23 :
+ft_isalnum      done            //the base function return 8?
+
+04.09.23 :
+makefile        done            
+ft_isascii      done            //the base function return 1 like me
+ft_toupper      done
+ft_tolower      done
+
+09.09.23 :
+ft_strchr       done            //recontroler les exception, double check
+
+13.09.23 :
+ft_strdup       done            //controller les exception, double check
+ft_strlcat      in progress     //pas de man sur linux ? que unix ? 
+
+30.09.23 :
+ft_calloc       done            //controller les exception, double check
+ft_memcmp       done            //controller les exception, double check
+
+
+
+
+
 

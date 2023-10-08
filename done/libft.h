@@ -5,7 +5,7 @@
 # include <string.h>	//pour utiliser les fonctions de base
 # include <stdlib.h>
 # include <ctype.h>     //pour utilser les fonction isalpha, is*, etc
-
+# include <stddef.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
@@ -25,6 +25,8 @@ char    *ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *s);
 void    *ft_calloc(size_t nmemb, size_t size);
 int     ft_atoi(const char *nptr);
+int     ft_strncmp(const char *s1, const char *s2, size_t n);
+char    *ft_strrchr(const char *s, int c);
 
 
 

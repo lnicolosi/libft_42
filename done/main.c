@@ -15,8 +15,8 @@
  *  200 →   ft_strdup
  *  219 →   ft_calloc
  *  246 →   ft_memcmp
- *
- *
+ *  266 →   ft_atoi
+ *  278 →   ft_strncmp
  *
  *
  *
@@ -25,7 +25,7 @@
  */
 #include "libft.h"
 #include <stdio.h>
-
+#include <string.h>
 int	main(void)
 {
 	/* TEST FT_STRLEN */
@@ -35,33 +35,33 @@ int	main(void)
 	printf("String a compter : %s\n", s);
 	int	i;
 	i = ft_strlen(s);
-	printf("ma fonction : %d\n", i);
+	printf("FT_STRLEN : %d\n", i);
 	i = strlen(s);
-	printf("librairie : %d\n\n", i);
+	printf("STRLEN : %d\n\n", i);
 
 	/* TEST FT_STRCPY */
 
 	char	src1[] = "salut";
 	char	dest1[] = "bonjour";
-	printf("source : %s\n", src1);
-	printf("destination : %s\n", dest1);
+	printf("copie de : %s\n", src1);
+	printf("dans cette destination : %s\n", dest1);
 	ft_strcpy(dest1, src1);
-	printf("copie de src dans dest : %s\n\n", dest1);
+	printf("FT_STRCPY : la destination devient : %s\n\n", dest1);
 	
 	/* TEST FT_STRNCPY */
 
-	char	src2[] = "Nicolosi";
-	char	dest2[] = "Luca";
-	printf("source : %s\n", src2);
-	printf("destination : %s\n", dest2);
-	strncpy(dest2, src2, 6);
-	printf("copie de src dans dest : %s\n\n", dest2);
+	char	src2[] = "Luca";
+	char	dest2[] = "Nicolosi";
+	printf("copie de : %s\n", src2);
+	printf("dans cette destination destination : %s\n", dest2);
+	ft_strncpy(dest2, src2, 3);
+	printf("FT_STRNCPY : la destination devient : %s\n\n", dest2);
 
 	/* TEST FT_MEMSET */
 
 	int	s1[8];
-	ft_memset(s1, 48, sizeof(s1));
-	printf("memset test : -%d-\n", *s1);
+	ft_memset(s1, 1, sizeof(s1));
+	printf("FT_MEMSET valeur a appliquer : -%d-\n", *s1);
 	size_t i1 = 0;
 	while (i1 < 8) 
 	{
@@ -80,7 +80,7 @@ int	main(void)
 		j2++;
 	}
 	ft_bzero(s2, sizeof(s2));
-	printf("test : -%d-\n", *s2);
+	printf("FT_BZERO test : -%d-\n", *s2);
 	size_t i2 = 0;
 	while (i2 < 8) 
 	{
@@ -94,6 +94,7 @@ int	main(void)
 	int source[5];
 	int destination[5];
 	int i3 = 0;
+    printf("FT_MEMCPY test :\n");
 	while(i3 < 5)
 	{
 		source[i3] = i3;
@@ -111,8 +112,7 @@ int	main(void)
 	{
 		printf("destination[%d] = %d\n", i3, destination[i3]);
 		i3++;
-	}
-	
+	}	
 	ft_memcpy(destination, source, sizeof(source));
 	i3 = 0;
 	while(i3 < 5)
@@ -124,12 +124,12 @@ int	main(void)
 
 	/* TEST FT_ISALPHA */
 
-    int a = -5;
+    int a = 101;
     int b = ft_isalpha(a);
     printf("ISALPHA: the ascii value is : %d\n", a);
     printf("the return value with ft_isalpha is : %d\n", b);
-    b = isalpha(a);
-    printf("the return value with isalpha is : %d\n\n", b);
+    int d = isalpha(a);
+    printf("the return value with isalpha is : %d\n\n", d);
 
     /* TEST FT_ISDIGIT */
     
@@ -190,16 +190,16 @@ int	main(void)
 
     /* TEST FT_STRCHR */
 
-    char tweet[] = "Je te mention ici thomas";
-    char *mention = strchr(tweet, '@');
+    char tweet[] = "Je te mention ici @thomas";
+    char *mention = strchr(tweet, 'x');
     printf("strchr : la mention est : %s\n", mention);
 
-    char *mention2 = ft_strchr(tweet, '@');
+    char *mention2 = ft_strchr(tweet, 'x');
     printf("ft_strchr : la mention est : %s\n\n", mention2);
 
     /* TEST FT_STRDUP */
 
-    char mot[] = "salut";
+    char mot[] = "Bienvenue dans mon monde";
     printf("Le mot a copier est : %s\n", mot);
     char *copie;
     copie = strdup(mot);
@@ -223,7 +223,7 @@ int	main(void)
     
     //printf("choisis la taille du tableau");
     //scanf("%d", &tailleTableau);
-
+    printf("FT_CALLOC : \n");
     tableau = (int *)ft_calloc(tailleTableau, sizeof(int));
     //tableau = (int *)calloc(tailleTableau, sizeof(int));
     //tableau = (int *)malloc(sizeof(int)*tailleTableau);
@@ -265,19 +265,44 @@ int	main(void)
 
     /* TEST FT_ATOI */
 
-    char *num1 = "salut";
-    char *num2 = " salut";
+    char *num1 = "-24";
+    char *num2 = "-5";
 
     int somme = atoi(num1) - atoi(num2);
 
     printf("atoi : %s - %s = %d\n",num1, num2, somme);
 
-    somme = ft_atoi(num1) - ft_atoi(num2);
-    printf("ft_atoi : %s - %s = %d\n", num1, num2, somme);
+    int somme2 = ft_atoi(num1) - ft_atoi(num2);
+    printf("ft_atoi : %s - %s = %d\n\n", num1, num2, somme2);
 
+    /* TEST FT_STRNCMP */
 
+    char *mot1 = "automatisation";
+    char *mot2 = "automatiser";
+    
+    int difference1 = strncmp(mot1, mot2, 9);
+    int difference2 = strncmp(mot1, mot2, 16);
 
+    printf("strncmp : 9 lettres : [%d] / 10 lettres : [%d]\n", difference1, difference2);
+    
+    difference1 = ft_strncmp(mot1, mot2, 9);
+    difference2 = ft_strncmp(mot1, mot2, 16);
 
+    printf("ft_strncmp : 9 lettres : [%d] / 10 lettres : [%d]\n\n", difference1, difference2);
+    
+    /* TEST FT_STRRCHR */
+
+    char suite[] = "salut,je,suis,luca!";
+    char occurance = 't';
+    char *resultat = ft_strrchr(suite, occurance);
+    printf("%s\n", suite);
+    printf("afficher a partir de la derniere occurance de : '%c'\n", occurance);
+    if(resultat == NULL)
+        printf("!!Pas d'occurance trouvée!!\n");
+    else
+    {
+        printf("ft_strrchr = %s\n", resultat);
+    }
 
 
 

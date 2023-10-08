@@ -2,7 +2,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i; // pourquoi un u-int et pas size_t ?
+	size_t  i;
 
 	i = 0;
 	while (s[i])

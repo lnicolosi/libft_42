@@ -7,9 +7,18 @@ int ft_atoi(const char *nptr)
     resultat = 0;
     signe = 1;
     i = 0;
-    
     while(nptr[i] == ' ')
         i++;
+    if(nptr[i] == '-')
+    {
+        signe = -1;
+        i++;
+    }
+    else if(nptr[i] == '+')
+    {
+        signe = 1;
+        i++;
+    }
     while(nptr[i])
     {
         if(nptr[i] < 48 || nptr[i] > 57)
@@ -17,6 +26,5 @@ int ft_atoi(const char *nptr)
         resultat = resultat * 10 + nptr[i] - 48;
         i++;
     }
-    
     return (resultat*signe);
 }

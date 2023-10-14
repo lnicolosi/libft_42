@@ -301,10 +301,19 @@ int	main(void)
         printf("!!Pas d'occurance trouvée!!\n");
     else
     {
-        printf("ft_strrchr = %s\n", resultat);
+        printf("ft_strrchr = %s\n\n", resultat);
     }
 
+	/* TEST FT_SUBSTR */
 
+	char *chaine4 = "Je recherche un mot dans cette phrase";
+	int start = 3;
+	size_t taille2 = 20;
+	printf("ft_substr : '%s'\n", chaine4);
+	printf("a partir de '%c' et jusqu'a '%c'\n", chaine4[start], chaine4[start + taille2 - 1]);
+	char *recherche2 = ft_substr(chaine4, start, taille2);
+
+	printf("%s\n", recherche2);
 
 
 
@@ -312,19 +321,3 @@ int	main(void)
 
 	return(0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

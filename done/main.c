@@ -313,8 +313,16 @@ int	main(void)
 	printf("a partir de '%c' et jusqu'a '%c'\n", chaine4[start], chaine4[start + taille2 - 1]);
 	char *recherche2 = ft_substr(chaine4, start, taille2);
 
-	printf("%s\n", recherche2);
+	printf("%s\n\n", recherche2);
 
+	/* TEST FT_STRJOIN */
+
+	char *chaine5 = "Je suis";
+	char *chaine6 = " le fils de ma mère";
+	char *chaine7 = ft_strjoin(chaine5, chaine6);
+
+	printf("la somme des deux chaine : %s\n", chaine7);
+	printf("main longueur chaine : %zu\n", ft_strlen(chaine7));
 
 
 

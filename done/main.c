@@ -194,7 +194,7 @@ int	main(void)
     char *mention = strchr(tweet, 'x');
     printf("strchr : la mention est : %s\n", mention);
 
-    char *mention2 = ft_strchr(tweet, 'x');
+    char *mention2 = ft_strchr(tweet,/Applications/Discord.app  'x');
     printf("ft_strchr : la mention est : %s\n\n", mention2);
 
     /* TEST FT_STRDUP */

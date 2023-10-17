@@ -19,9 +19,21 @@
  *  278 →   ft_strncmp
  *	293	→	ft_strrchr
  *	314 →	ft_memmove
- *	327 →	ft_strlcpy
+ *	327	→	ft_strlcpy
  *	337	→	ft_strnstr
  *	356 →	ft_memchr
+ *	386	→	ft_substr
+ *	407	→	ft_strjoin	
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  *
  */
 #include "libft.h"
@@ -380,9 +392,31 @@ int	main(void)
 	else
 	{
 		printf("ft_memchr : Le caractere %c a ete trouve\n", aChercher);
-		printf("ft_memchr : Le retour est : %s\n", result4);
+		printf("ft_memchr : Le retour est : %s\n\n", result4);
 	}
 	
+	/* 25) TEST FT_SUBSTR */
+
+	char *chaine4 = "Je recherche un mot dans cette phrase";
+	int start = 3;
+	size_t taille2 = 20;
+	printf("ft_substr : '%s'\n", chaine4);
+	printf("a partir de '%c' et jusqu'a '%c'\n", chaine4[start], chaine4[start + taille2 - 1]);
+	char *recherche2 = ft_substr(chaine4, start, taille2);
+
+	printf("%s\n\n", recherche2);
+	
+	/* 26) TEST FT_STRJOIN */
+
+	char *chaine5 = "Je suis";
+	char *chaine6 = " le fils de ma mère";
+	char *chaine7 = ft_strjoin(chaine5, chaine6);
+
+	printf("la somme des deux chaine : %s\n", chaine7);
+	printf("main longueur chaine : %zu\n", ft_strlen(chaine7));
+
+
+
 
 	return(0);
 }

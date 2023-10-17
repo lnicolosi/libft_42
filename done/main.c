@@ -323,7 +323,7 @@ int	main(void)
 
 	printf("la somme des deux chaine : %s\n", chaine7);
 	printf("main longueur chaine : %zu\n", ft_strlen(chaine7));
-
+		
 
 
 

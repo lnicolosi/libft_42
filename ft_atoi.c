@@ -6,37 +6,30 @@
 /*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:32:02 by lnicolos          #+#    #+#             */
-/*   Updated: 2023/10/09 13:36:01 by lnicolos         ###   ########.fr       */
+/*   Updated: 2023/10/17 10:38:11 by lnicolos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	signe;
 	int	resultat;
+	int	signe;
 
-	resultat = 0;
 	signe = 1;
-	i = 0;
-	while (nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '-')
+	resultat = 0;
+	while ((*nptr > 9 && *nptr < 13) || *nptr == 32)
+		nptr++;
+	while (*nptr == 43 || *nptr == 45)
 	{
-		signe = -1;
-		i++;
+		if (*nptr == 45)
+			signe *= -1;
+		nptr++;
 	}
-	else if (nptr[i] == '+') //a verifier si besoins ou pas
+	while (*nptr > 47 && *nptr < 58)
 	{
-		signe = 1;
-		i++;
-	}
-	while (nptr[i])
-	{
-		if (nptr[i] < 48 || nptr[i] > 57)
-			return (resultat * signe);
-		resultat = resultat * 10 + nptr[i] - 48;
-		i++;
+		resultat = resultat * 10;
+		resultat = resultat + *nptr - 48;
+		nptr++;
 	}
 	return (resultat * signe);
 }

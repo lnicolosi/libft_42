@@ -413,10 +413,23 @@ int	main(void)
 	char *chaine7 = ft_strjoin(chaine5, chaine6);
 
 	printf("la somme des deux chaine : %s\n", chaine7);
-	printf("main longueur chaine : %zu\n", ft_strlen(chaine7));
+	printf("main longueur chaine : %zu\n\n", ft_strlen(chaine7));
 
+	/* 27) TEST FT_PUTCHAR_FD */
 
+	printf("ft_putchar_fd : \n");
+	ft_putchar_fd('t', 1);
+	printf("\n\n");
 
+	/* 28) TEST FT_PUTSTR_FD */
+
+	ft_putstr_fd("ft_putstr_fd :\n", 1);
+	ft_putstr_fd("voici la chaine de caractere\n\n", 1);
+	
+	/* 29) TEST FT_PUTENDL_FD */
+	
+	ft_putendl_fd("ft_putendl_fd :", 1);
+	ft_putendl_fd("retour ligne auto\n", 1);
 
 	return(0);
 }

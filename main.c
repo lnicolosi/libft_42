@@ -1,32 +1,32 @@
-/*  31  →   ft_strlen 
- *  42  →   ft_strcpy
- *  51  →   ft_strncpy
- *  60  →   ft_memset
- *  73  →   ft_bzero
- *  92  →   ft_memcpy
- *  125 →   ft_isalpha
- *  134 →   ft_isdigit
- *  143 →   ft_isprint
- *  152 →   ft_isalnum
- *  161 →   ft_isascii
- *  170 →   ft_tolower
- *  181 →   ft_toupper
- *  191 →   ft_strchr  
- *  200 →   ft_strdup
- *  219 →   ft_calloc
- *  246 →   ft_memcmp
- *  266 →   ft_atoi
- *  278 →   ft_strncmp
- *	293	→	ft_strrchr
- *	314 →	ft_memmove
- *	327	→	ft_strlcpy
- *	337	→	ft_strnstr
- *	356 →	ft_memchr
- *	386	→	ft_substr
- *	407	→	ft_strjoin	
- *
- *
- *
+/*  43  →   ft_strlen 
+ *  54  →   ft_strcpy
+ *  63  →   ft_strncpy
+ *  72  →   ft_memset
+ *  85  →   ft_bzero
+ *  104  →   ft_memcpy
+ *  137 →   ft_isalpha
+ *  146 →   ft_isdigit
+ *  155 →   ft_isprint
+ *  164 →   ft_isalnum
+ *  173 →   ft_isascii
+ *  182 →   ft_tolower
+ *  193 →   ft_toupper
+ *  203 →   ft_strchr  
+ *  212 →   ft_strdup
+ *  231 →   ft_calloc
+ *  258 →   ft_memcmp
+ *  278 →   ft_atoi
+ *  290 →   ft_strncmp
+ *	305	→	ft_strrchr
+ *	326 →	ft_memmove
+ *	339	→	ft_strlcpy
+ *	349	→	ft_strnstr
+ *	368 →	ft_memchr
+ *	398	→	ft_substr
+ *	409	→	ft_strjoin	
+ *	418	→	ft_putchar_fd
+ *	424	→	ft_putstr_fd
+ *	429	→	ft_putendl_fd
  *
  *
  *

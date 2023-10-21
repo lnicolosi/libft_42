@@ -6,7 +6,7 @@
 /*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:46:08 by lnicolos          #+#    #+#             */
-/*   Updated: 2023/10/17 08:58:59 by lnicolos         ###   ########.fr       */
+/*   Updated: 2023/10/21 09:37:00 by lnicolos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-
+void	ft_putnbr_fd(int n, int fd);
 
 
 #endif

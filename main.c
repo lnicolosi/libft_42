@@ -27,7 +27,7 @@
  *	418	→	ft_putchar_fd
  *	424	→	ft_putstr_fd
  *	429	→	ft_putendl_fd
- *
+ *	434	→	ft_putnbr_fd
  *
  *
  *
@@ -430,6 +430,15 @@ int	main(void)
 	
 	ft_putendl_fd("ft_putendl_fd :", 1);
 	ft_putendl_fd("retour ligne auto\n", 1);
+
+	/* 30) TEST FT_PUTNBR_FD */
+
+	int n = -578329;
+	ft_putendl_fd("ft_putnbr_fd : le nombre a afficher est le : ", 1);
+	ft_putnbr_fd(n, 1);
+	ft_putendl_fd("\n", 1);
+	
+	
 
 	return(0);
 }

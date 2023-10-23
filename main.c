@@ -438,7 +438,27 @@ int	main(void)
 	ft_putnbr_fd(n, 1);
 	ft_putendl_fd("\n", 1);
 	
-	
+	/* 31) TEST FT_STRLCAT */
+
+	char dest3[20] = "Hello-";
+	char source3[] = "World";
+
+	printf("taille de dest3  : %lu\n", sizeof(dest3));
+	size_t longueur = strlcat(dest3, source3, sizeof(dest3));
+	printf("la longueur est : %zu\n", longueur);
+	printf("la dest devient : %s\n", dest3);
+
+	int x = 0;
+	while (dest3[x])
+	{
+		x++;
+	}
+	if (dest3[x] == '\0')
+	{
+		printf("il y a le backssashzero, et la longueur de dst : %zu\n\n", ft_strlen(dest3));
+	}
+
+
 
 	return(0);
 }

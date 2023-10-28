@@ -458,6 +458,13 @@ int	main(void)
 		printf("il y a le backssashzero, et la longueur de dst : %zu\n\n", ft_strlen(dest3));
 	}
 
+  
+  /* 31) FT_STRTRIM */
+
+  char *toTrim = "hhhhhdddddeeeehhLuca is a nice guy !hhhddddeeeeh";
+  char *charToTrim = "hde"
+  char *trimmed = ft_strtrim(toTrim, charToTrim);
+  printf("Trimmed char : %s\n");
 
 
 	return(0);

@@ -459,12 +459,14 @@ int	main(void)
 	}
 
   
-  /* 31) FT_STRTRIM */
+	/* 31) FT_STRTRIM */
 
-  char *toTrim = "hhhhhdddddeeeehhLuca is a nice guy !hhhddddeeeeh";
-  char *charToTrim = "hde"
-  char *trimmed = ft_strtrim(toTrim, charToTrim);
-  printf("Trimmed char : %s\n");
+	char *toTrim = "hhhhhdddddeeeehhLuca is a nice guy !hhhddddeeeeh";
+	char *charToTrim = "hde";
+	char *trimmed = ft_strtrim(toTrim, charToTrim);
+	printf("char to trim : %s\n", toTrim);
+	printf("letters to remove : %s\n", charToTrim);
+	printf("Trimmed char : %s\n", trimmed);
 
 
 	return(0);

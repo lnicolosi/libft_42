@@ -3,8 +3,9 @@ CFLAGS = -Wall -Wextra -Werror
 EXEC = test
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
+LIB = libft.a
 
-all : $(EXEC)
+all : $(EXEC) $(LIB)
 
 %.o : %.c
 	$(CC) -c $< -o $@ $(CFLAGS)
@@ -12,5 +13,8 @@ all : $(EXEC)
 $(EXEC) : $(OBJ)
 	$(CC) -o $@ $^
 
+$(LIB) : $(OBJ)
+	ar rcs $@ $^
+
 clean :
-	rm -rf $(EXEC) $(OBJ)
+	rm -rf $(EXEC) $(OBJ) $(LIB)

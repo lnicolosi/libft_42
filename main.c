@@ -28,7 +28,7 @@
  *	424	→	ft_putstr_fd
  *	429	→	ft_putendl_fd
  *	434	→	ft_putnbr_fd
- *
+ *	462 →	ft_strtrim
  *
  *
  *
@@ -353,7 +353,7 @@ int	main(void)
 	size_t len = 15;
 
 	char *result = ft_strnstr(haystack, needle, len);
-	char *result2 = strnstr(haystack, needle, len);
+	char *result2 = ft_strnstr(haystack, needle, len); //MODIFICATION POUR QUE CA FONCTIONNE SUR LINUX
 
 	if(result != 0)
 		printf("ft_strnstr a trouve la chaine : %s\n", result);
@@ -444,16 +444,16 @@ int	main(void)
 	char source3[] = "World";
 
 	printf("taille de dest3  : %lu\n", sizeof(dest3));
-	size_t longueur = strlcat(dest3, source3, sizeof(dest3));
+	size_t longueur = ft_strlcat(dest3, source3, sizeof(dest3));
 	printf("la longueur est : %zu\n", longueur);
 	printf("la dest devient : %s\n", dest3);
 
-	int x = 0;
-	while (dest3[x])
+	int z = 0;
+	while (dest3[z])
 	{
-		x++;
+		z++;
 	}
-	if (dest3[x] == '\0')
+	if (dest3[z] == '\0')
 	{
 		printf("il y a le backssashzero, et la longueur de dst : %zu\n\n", ft_strlen(dest3));
 	}
@@ -466,8 +466,22 @@ int	main(void)
 	char *trimmed = ft_strtrim(toTrim, charToTrim);
 	printf("char to trim : %s\n", toTrim);
 	printf("letters to remove : %s\n", charToTrim);
-	printf("Trimmed char : %s\n", trimmed);
+	printf("Trimmed char : %s\n\n", trimmed);
 
 
+	/* 32) FT_SPLIT */
+
+	char *toSplit = "to,be,or,not,to,be,this,is,the,question";
+	char **tabOfWords = ft_split(toSplit, ',');
+	int x = 0;
+	//int y = 0;
+	printf("premier mot du tableau : %s\n", tabOfWords[0]);
+	printf("index : %d\n", x);
+	while(tabOfWords[x])
+	{
+		printf("tab index : [%d] : %s\n", x, tabOfWords[x]);
+		x++;
+	}
+	printf("index : %d\n", x);
 	return(0);
 }

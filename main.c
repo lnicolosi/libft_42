@@ -29,7 +29,7 @@
  *	429	→	ft_putendl_fd
  *	434	→	ft_putnbr_fd
  *	462 →	ft_strtrim
- *
+ *	472	→	ft_split
  *
  *
  *
@@ -482,6 +482,18 @@ int	main(void)
 		printf("tab index : [%d] : %s\n", x, tabOfWords[x]);
 		x++;
 	}
-	printf("index : %d\n", x);
+	printf("index : %d\n\n", x);
+
+
+	/* 33) FT_ITOA */
+
+	int integer = 0;
+	char *strNbr = ft_itoa(integer);
+	printf("l'entier version INT : %d\n", integer);
+	printf("l'entier version STR : %s\n", strNbr);
+
+
+
+
 	return(0);
 }

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/16 18:24:06 by lnicolos          #+#    #+#             */
+/*   Updated: 2023/11/16 18:26:08 by lnicolos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int		digit_nbr(int n)
+int	digit_nbr(int n)
 {
 	int		i;
 
@@ -16,7 +28,7 @@ int		digit_nbr(int n)
 	return (i);
 }
 
-int		is_negativ(int n)
+int	is_negativ(int n)
 {
 	int		i;
 
@@ -59,14 +71,14 @@ char	*ft_itoa(int n)
 	{
 		str_zero = (char *)malloc(2);
 		if (str_zero == NULL)
-			return NULL;
+			return (NULL);
 		str_zero[0] = '0';
 		str_zero[1] = '\0';
 		return (str_zero);
 	}
 	str = (char *)malloc((digit_nbr(n) * sizeof(char)) + (1 + is_negativ(n)));
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 	set_str(n, str);
 	if (is_negativ(n))
 		str[0] = '-';

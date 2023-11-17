@@ -1,6 +1,18 @@
+* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/16 18:29:09 by lnicolos          #+#    #+#             */
+/*   Updated: 2023/11/16 18:37:00 by lnicolos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	**tabSize(const char *s, char c)
+char	**tab_size(const char *s, char c)
 {
 	int		taille;
 	char	**tableau;
@@ -14,11 +26,11 @@ char	**tabSize(const char *s, char c)
 	}
 	tableau = (char **)malloc(sizeof(char *) * (taille + 1));
 	if (tableau == NULL)
-		return NULL;
+		return (NULL);
 	return (tableau);
 }
 
-void	freeTab(char **tableau)
+void	free_tab(char **tableau)
 {
 	int	i;
 
@@ -37,7 +49,7 @@ char	**ft_split(const char *s, char c)
 	int			i;
 	const char	*debut;
 
-	tableau = tabSize(s, c);
+	tableau = tab_size(s, c);
 	i = 0;
 	while (*s)
 	{
@@ -49,11 +61,11 @@ char	**ft_split(const char *s, char c)
 			tableau[i] = (char *)malloc(sizeof(char) * ((s - debut) + 1));
 			if (tableau[i] == NULL)
 			{
-				freeTab(tableau);
-				return NULL;
+				free_tab(tableau);
+				return (NULL);
 			}
 			ft_strncpy(tableau[i], debut, (s - debut));
-			tableau[i][(s-debut)] = '\0';
+			tableau[i][(s - debut)] = '\0';
 			i++;
 		}
 		else

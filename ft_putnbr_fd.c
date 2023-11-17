@@ -6,13 +6,13 @@
 /*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 09:40:52 by lnicolos          #+#    #+#             */
-/*   Updated: 2023/10/21 09:44:09 by lnicolos         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:27:58 by lnicolos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-	void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n >= 0 && n < 10 && n != -2147483648)
 	{

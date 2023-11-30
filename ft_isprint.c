@@ -12,8 +12,7 @@
 
 int	ft_isprint(int c)
 {
-	unsigned char	b;
-
-	b = (unsigned char) c;
-	return (b > 31 && b < 127);
+	if (c > 31 && c < 127)
+		return (1);
+	return (0);
 }

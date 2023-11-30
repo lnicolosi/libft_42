@@ -12,23 +12,32 @@
 
 #include <stddef.h>
 
+int	occurence(const char *s, int c, int compteur)
+{
+	char	*s2;
+	int		i;
+
+	s2 = (char *) s;
+	i = 0;
+	while (s2[i])
+	{
+		if (s2[i] == c)
+			compteur++;
+		i++;
+	}
+	return (compteur);
+}
+
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*s1;
 	int		compteur;
-	int		i;
 	int		compteur2;
 
 	s1 = (char *) s;
 	compteur = 0;
-	i = 0;
 	compteur2 = 0;
-	while (s1[i])
-	{
-		if (s1[i] == c)
-			compteur++;
-		i++;
-	}
+	compteur = occurence(s, c, compteur);
 	if (compteur == 0)
 		return (NULL);
 	while (*s1 && compteur2 < compteur)

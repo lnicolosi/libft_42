@@ -181,11 +181,11 @@ int	main(void)
 
     /* 12) TEST FT_TOLOWER */
 
-    char c = 'P';
+    char c = 'Z';
     printf("Character avant : %c\n", c);
     c = tolower(c);
     printf("Character apres avec tolower : %c\n", c);
-    c = 'P';
+    c = 'Z';
     c = ft_tolower(c);
     printf("Character apres avec ft_tolower : %c\n\n", c);
 
@@ -305,7 +305,7 @@ int	main(void)
     /* 20) TEST FT_STRRCHR */
 
     char suite[] = "salut,je,suis,luca!";
-    char occurance = 's';
+    char occurance = 'u';
     char *resultat = ft_strrchr(suite, occurance);
     printf("%s\n", suite);
     printf("afficher a partir de la derniere occurance de : '%c'\n", occurance);

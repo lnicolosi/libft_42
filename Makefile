@@ -1,11 +1,12 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+PROJECT_NAME = libft
 EXEC = test
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
-LIB = libft.a
+NAME = libft.a
 
-all : $(EXEC) $(LIB)
+all : $(EXEC) $(NAME)
 
 %.o : %.c
 	$(CC) -c $< -o $@ $(CFLAGS)
@@ -13,8 +14,11 @@ all : $(EXEC) $(LIB)
 $(EXEC) : $(OBJ)
 	$(CC) -o $@ $^
 
-$(LIB) : $(OBJ)
+$(NAME) : $(OBJ)
 	ar rcs $@ $^
 
 clean :
-	rm -rf $(EXEC) $(OBJ) $(LIB)
+	rm -rf $(EXEC) $(OBJ)
+
+fclean :
+	rm -rf $(NAME)

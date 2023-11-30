@@ -10,29 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n >= 0 && n < 10 && n != -2147483648)
+	long long int i;
+
+	i = n;
+	if (i < 0)
 	{
-		n = n + 48;
-		write(fd, &n, 1);
-	}
-	else if (n == -2147483648)
-	{
+		i = (i * -1);
 		write(fd, "-", 1);
-		write(fd, "2", 1);
-		ft_putnbr_fd(147483648, 1);
 	}
-	else if (n < 0)
+	if (i > 9)
 	{
-		write(fd, "-", 1);
-		ft_putnbr_fd(n * (-1), 1);
+		ft_putnbr_fd(i / 10, fd);
+		ft_putchar_fd((i % 10) + 48, fd);
 	}
 	else
-	{
-		ft_putnbr_fd(n / 10, 1);
-		ft_putnbr_fd(n % 10, 1);
-	}	
+		ft_putchar_fd(i + 48, fd);
 }

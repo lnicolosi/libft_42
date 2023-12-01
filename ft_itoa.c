@@ -14,14 +14,16 @@
 
 int	digit_nbr(int n)
 {
-	int		i;
+	int				i;
+	long long int	lli;
 
-	if (n < 0)
-		n *= -1;
+	lli = n;
+	if (lli < 0)
+		lli *= -1;
 	i = 0;
-	while (n > 9)
+	while (lli > 9)
 	{
-		n /= 10;
+		lli /= 10;
 		i++;
 	}
 	i++;
@@ -41,21 +43,23 @@ int	is_negativ(int n)
 
 char	*set_str(int n, char *str)
 {
-	int		i;
-	int		x;
+	int				i;
+	long long int	x;
+	long long int	lli;
 
+	lli = n;
 	x = n;
-	i = (digit_nbr(n) + is_negativ(n));
-	if (is_negativ(n))
-		n *= -1;
-	while (i >= is_negativ(n))
+	i = (digit_nbr(lli) + is_negativ(lli));
+	if (is_negativ(lli))
+		lli *= -1;
+	while (i >= is_negativ(lli))
 	{
-		if (i == (digit_nbr(n) + is_negativ(x)))
+		if (i == (digit_nbr(lli) + is_negativ(x)))
 			str[i] = '\0';
 		else
 		{
-			str[i] = (n % 10) + 48;
-			n /= 10;
+			str[i] = (lli % 10) + 48;
+			lli /= 10;
 		}
 		i--;
 	}
@@ -64,10 +68,12 @@ char	*set_str(int n, char *str)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	char	*str_zero;
+	char			*str;
+	char			*str_zero;
+	long long int	i;
 
-	if (n == 0)
+	i = n;
+	if (i == 0)
 	{
 		str_zero = (char *)malloc(2);
 		if (str_zero == NULL)
@@ -76,11 +82,11 @@ char	*ft_itoa(int n)
 		str_zero[1] = '\0';
 		return (str_zero);
 	}
-	str = (char *)malloc((digit_nbr(n) * sizeof(char)) + (1 + is_negativ(n)));
+	str = (char *)malloc((digit_nbr(i) * (sizeof(char)) + (1 + is_negativ(i))));
 	if (str == NULL)
 		return (NULL);
-	set_str(n, str);
-	if (is_negativ(n))
+	set_str(i, str);
+	if (is_negativ(i))
 		str[0] = '-';
 	return (str);
 }

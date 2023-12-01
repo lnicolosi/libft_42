@@ -17,14 +17,15 @@ int	ft_atoi(const char *nptr)
 
 	signe = 1;
 	resultat = 0;
-	while ((*nptr > 9 && *nptr < 13) || *nptr == 32)
+	while ((*nptr >= '\t' && *nptr <= '\r') || *nptr == 32)
 		nptr++;
-	while (*nptr == 43 || *nptr == 45)
+	if (*nptr == 45)
 	{
-		if (*nptr == 45)
-			signe *= -1;
+		signe = -1;
 		nptr++;
 	}
+	else if (*nptr == 43)
+		nptr++;
 	while (*nptr > 47 && *nptr < 58)
 	{
 		resultat = resultat * 10;

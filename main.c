@@ -370,24 +370,24 @@ int	main(void)
 	char *chaine3 = "l.nicolosi8@gmail.com";
 	char aChercher = '@';
 
-	char *result3 = memchr(chaine3, aChercher, 12);
-	char *result4 = ft_memchr(chaine3, aChercher, 12);
+	char *result3 = memchr(chaine3, aChercher, 20);
+	char *result4 = ft_memchr(chaine3, aChercher, 20);
 
 	if (result3 == NULL)
 	{
 		printf("memchr : Le caractere %c n'a PAS ete trouve\n", aChercher);
-		printf("memchr : Le retour est : %s\n", result4);
+		printf("memchr : Le retour est : %s\n", result3);
 	}
 	else
 	{
 		printf("memchr : Le caractere %c a ete trouve\n", aChercher);
-		printf("memchr : Le retour est : %s\n", result4);
+		printf("memchr : Le retour est : %s\n", result3);
 	}
 	
-	if (result3 == NULL)
+	if (result4 == NULL)
 	{
 		printf("ft_memchr : Le caractere %c n'a PAS ete trouve\n", aChercher);
-		printf("ft_memchr : Le retour est : %s\n", result4);
+		printf("ft_memchr : Le retour est : %s\n\n", result4);
 	}
 	else
 	{

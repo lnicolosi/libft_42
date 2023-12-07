@@ -10,43 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int	occurence(const char *s, int c, int compteur)
-{
-	char	*s2;
-	int		i;
-
-	s2 = (char *) s;
-	i = 0;
-	while (s2[i])
-	{
-		if (s2[i] == c)
-			compteur++;
-		i++;
-	}
-	return (compteur);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*s1;
-	int		compteur;
-	int		compteur2;
+	int	i;
 
-	s1 = (char *) s;
-	compteur = 0;
-	compteur2 = 0;
-	compteur = occurence(s, c, compteur);
-	if (compteur == 0)
-		return (NULL);
-	while (*s1 && compteur2 < compteur)
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
 	{
-		if (*s1 == c)
-			compteur2++;
-		if (compteur2 == compteur)
-			break ;
-		s1++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	return (s1);
+	return (NULL);
 }

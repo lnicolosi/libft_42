@@ -12,65 +12,104 @@
 
 #include "libft.h"
 
-char	**tab_size(const char *s, char c)
-{
-	int		taille;
-	char	**tableau;
-
-	taille = 0;
-	while (*s)
-	{
-		if (*s == c)
-			taille++;
-		s++;
-	}
-	tableau = (char **)malloc(sizeof(char *) * (taille + 1));
-	if (tableau == NULL)
-		return (NULL);
-	return (tableau);
-}
-
-void	free_tab(char **tableau)
+void	libre(char *strs)
 {
 	int	i;
 
 	i = 0;
-	while (tableau[i] != NULL)
+	while (strs[i] != '\0')
 	{
-		free(tableau[i]);
+		free(strs);
 		i++;
 	}
-	free(tableau);
+	free(strs);
 }
 
-char	**ft_split(const char *s, char c)
+int	compteur(char *str, char c)
 {
-	char		**tableau;
-	int			i;
-	const char	*debut;
+	int	i;
+	int	word;
 
-	tableau = tab_size(s, c);
 	i = 0;
-	while (*s)
+	word = 0;
+	while (str[i] != '\0')
 	{
-		if (*s != c)
+		if (str[i] != c)
 		{
-			debut = s;
-			while (*s && *s != c)
-				s++;
-			tableau[i] = (char *)malloc(sizeof(char) * ((s - debut) + 1));
-			if (tableau[i] == NULL)
-			{
-				free_tab(tableau);
-				return (NULL);
-			}
-			ft_strncpy(tableau[i], debut, (s - debut));
-			tableau[i][(s - debut)] = '\0';
-			i++;
+			word++;
+			while (str[i] != c && str[i] != '\0')
+				i++;
+			if (str[i] == '\0')
+				return (word);
 		}
-		else
-			s++;
+		i++;
 	}
-	tableau[i] = NULL;
-	return (tableau);
+	return (word);
+}
+
+void	copy(char *word, char *str, char c, int j)
+{
+	int	i;
+
+	i = 0;
+	while (str[j] != '\0' && str[j] == c)
+		j++;
+	while (str[j + i] != c && str[j + i] != '\0')
+	{
+		word[i] = str[j + i];
+		i++;
+	}
+	word[i] = '\0';
+}
+
+char	*alloc(char *str, char c, int *k)
+{
+	char	*word;
+	int		j;
+
+	j = *k;
+	word = NULL;
+	while (str[*k] != '\0')
+	{
+		if (str[*k] != c)
+		{
+			while (str[*k] != '\0' && str[*k] != c)
+				*k += 1;
+			word = (char *)malloc(sizeof(char) * (*k + 1));
+			if (word == NULL)
+				return (NULL);
+			break ;
+		}
+		*k += 1;
+	}
+	copy(word, str, c, j);
+	return (word);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**strs;
+	int		i;
+	int		j;
+	int		pos;
+
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	pos = 0;
+	j = compteur((char *)str, c);
+	strs = (char **)malloc(sizeof(char *) * (j + 1));
+	if (strs == NULL)
+		return (NULL);
+	strs[j] = NULL;
+	while (i < j)
+	{
+		strs[i] = alloc(((char *)str), c, &pos);
+		if (strs[i] == NULL)
+		{
+			libre(strs[i]);
+		}
+		i++;
+	}
+	return (strs);
 }

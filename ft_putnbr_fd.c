@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long long int i;
+	long long int	i;
 
 	i = n;
 	if (i < 0)

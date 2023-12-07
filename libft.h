@@ -6,17 +6,17 @@
 /*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 13:46:08 by lnicolos          #+#    #+#             */
-/*   Updated: 2023/10/21 09:37:00 by lnicolos         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:00:21 by lnicolos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdio.h>		//pour debug avec printf()
+//# include <stdio.h>		//pour debug avec printf()
 # include <unistd.h>
-# include <string.h>	//pour utiliser les fonctions de base
+//# include <string.h>	//pour utiliser les fonctions de base
 # include <stdlib.h>
-# include <ctype.h>     //pour utilser les fonction isalpha, is*, etc
+//# include <ctype.h>     //pour utilser les fonction isalpha, is*, etc
 # include <stddef.h>
 
 size_t	ft_strlen(const char *s);

@@ -6,7 +6,7 @@
 /*   By: lnicolos <lnicolos@student.42lausan>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 20:26:02 by lnicolos          #+#    #+#             */
-/*   Updated: 2023/11/02 21:05:45 by lnicolos         ###   ########.fr       */
+/*   Updated: 2023/12/07 10:57:27 by lnicolos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc((end - start + 1) * sizeof (char));
 	if (!str)
 	{
-		printf("echec malloc\n");
 		return (NULL);
 	}
 	i = 0;
